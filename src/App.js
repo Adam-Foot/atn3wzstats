@@ -173,7 +173,7 @@ class App extends Component {
                                             </p>
                                         </div>
                                         <div className="card-footer text-center"><a
-                                            href="https://cod.tracker.gg/warzone/profile/atvi/nayff24%238295391/matches"
+                                            href="https://cod.tracker.gg/warzone/profile/atvi/gainsley%20harriot%231544298/matches"
                                             className="text-decoration-none" target="_blank">
                                             <button className="btn btn-primary btn-block">Recent Games</button>
                                         </a></div>
@@ -201,7 +201,7 @@ class App extends Component {
                                             </p>
                                         </div>
                                         <div className="card-footer text-center"><a
-                                            href="https://cod.tracker.gg/warzone/profile/atvi/jimmy%20jams%235066697/matches"
+                                            href="https://cod.tracker.gg/warzone/profile/atvi/koostacy%239136361/matches"
                                             className="text-decoration-none" target="_blank">
                                             <button className="btn btn-primary btn-block">Recent Games</button>
                                         </a></div>
@@ -229,7 +229,7 @@ class App extends Component {
                                             </p>
                                         </div>
                                         <div className="card-footer text-center"><a
-                                            href="https://cod.tracker.gg/warzone/profile/battlenet/Redox%2321477/matches"
+                                            href="https://cod.tracker.gg/warzone/profile/atvi/jimmy%20jams%235066697/matches"
                                             className="text-decoration-none" target="_blank">
                                             <button className="btn btn-primary btn-block">Recent Games</button>
                                         </a></div>
@@ -257,7 +257,7 @@ class App extends Component {
                                             </p>
                                         </div>
                                         <div className="card-footer text-center"><a
-                                            href="https://cod.tracker.gg/warzone/profile/atvi/koostacy%239136361/matches"
+                                            href="https://cod.tracker.gg/warzone/profile/atvi/nayff24%238295391/matches"
                                             className="text-decoration-none" target="_blank">
                                             <button className="btn btn-primary btn-block">Recent Games</button>
                                         </a></div>
@@ -285,7 +285,7 @@ class App extends Component {
                                             </p>
                                         </div>
                                         <div className="card-footer text-center"><a
-                                            href="https://cod.tracker.gg/warzone/profile/atvi/gainsley%20harriot%231544298/matches"
+                                            href="https://cod.tracker.gg/warzone/profile/battlenet/Redox%2321477/matches"
                                             className="text-decoration-none" target="_blank">
                                             <button className="btn btn-primary btn-block">Recent Games</button>
                                         </a></div>
