@@ -10,11 +10,25 @@ class App extends Component {
             data: null,
             weeklyData: null,
             weeklyGames: null,
+            currentTime: null,
+            time: null,
             isLoading: true
         }
     }
 
+    loadNewTime() {
+        const date = new Date();
+        const minutes = date.getMinutes();
+        if (minutes > 30) {
+            this.setState({ currentTime: (30 - minutes) + 30 })
+        } else {
+            this.setState({ currentTime: 30 - minutes })
+        }
+    }
+
     async componentDidMount() {
+        this.updateTimer = setInterval(() => this.loadNewTime(), 1000);
+
         const dataRef = db.collection('data');
         const weeklyDataRef = db.collection('weekly-data');
         const weeklyGamesRef = db.collection('weekly-games');
@@ -49,11 +63,16 @@ class App extends Component {
         })
     }
 
+    componentWillUnmount() {
+        clearInterval(this.updateTimer);
+    }
+
     render() {
         const {
             data,
             weeklyData,
             weeklyGames,
+            currentTime,
             isLoading
         } = this.state;
 
@@ -96,10 +115,8 @@ class App extends Component {
 
                 <div className="container mt-5">
                     <div className="row justify-content-center mb-5">
-                        <div className="col-12 text-center">
-                            <p className="text-muted">*Stats are currently fetched from Activision using a manual
-                                trigger, so may not always be the latest and most up to date. In the future the data
-                                will be fetched automatically every 30 minutes.*</p>
+                        <div className="col-12 text-end">
+                            <h5 className="text-white">Stats update in <strong><span>{currentTime}</span> minutes</strong></h5>
                         </div>
                     </div>
 
