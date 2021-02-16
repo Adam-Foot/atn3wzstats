@@ -76,6 +76,54 @@ class App extends Component {
             isLoading
         } = this.state;
 
+        const Lifetime = ({username, kd, wins, kills, deaths, gamesPlayed, winPercentage}) => (
+            <div className="col-12 col-md-6 col-lg-4 mb-3">
+                <div className="card shadow-lg border-danger card-expand">
+                    <div className="card-body">
+                        <h5 className="card-title">{username}</h5>
+                        <p className="card-text mb-0">
+                            <strong>KD: </strong>{kd}</p>
+                        <p className="card-text mb-0">
+                            <strong>Wins: </strong>{wins}
+                        </p>
+                        <p className="card-text mb-0">
+                            <strong>Kills: </strong>{kills}
+                        </p>
+                        <p className="card-text mb-0">
+                            <strong>Deaths: </strong>{deaths}</p>
+                        <p className="card-text mb-0"><strong>Games
+                            Played: </strong>{gamesPlayed}</p>
+                        <p className="card-text"><strong>Win
+                            Percentage: </strong>{winPercentage}%
+                        </p>
+                    </div>
+                </div>
+            </div>
+        );
+
+        const Weekly = ({username, kd, kills, deaths, gamesPlayed, killsPerGame}) => (
+            <div className="col-12 col-md-6 col-lg-4 mb-3">
+                <div className="card shadow-lg border-danger card-expand">
+                    <div className="card-body">
+                        <h5 className="card-title">{username}</h5>
+                        <p className="card-text mb-0">
+                            <strong>KD: </strong>{kd}</p>
+                        <p className="card-text mb-0">
+                            <strong>Kills: </strong>{kills}
+                        </p>
+                        <p className="card-text mb-0">
+                            <strong>Deaths: </strong>{deaths}</p>
+                        <p className="card-text mb-0"><strong>Games
+                            Played: </strong>{gamesPlayed}</p>
+                        <p className="card-text mb-0">
+                            <strong>Kills per
+                                Game: </strong>{killsPerGame}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        );
+
         if (isLoading) {
             return (
                 <>
@@ -142,288 +190,49 @@ class App extends Component {
                         <div className="tab-pane fade show active" id="home" role="tabpanel"
                              aria-labelledby="home-tab">
                             <div className="row justify-content-center mt-3">
-                                <div className="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{data[0].id}</h5>
-                                            <p className="card-text mb-0">
-                                                <strong>KD: </strong>{data[0].response2.br.kdRatio.toFixed(2)}</p>
-                                            <p className="card-text mb-0">
-                                                <strong>Wins: </strong>{data[0].response2.br.wins}
-                                            </p>
-                                            <p className="card-text mb-0">
-                                                <strong>Kills: </strong>{data[0].response2.br.kills}
-                                            </p>
-                                            <p className="card-text mb-0">
-                                                <strong>Deaths: </strong>{data[0].response2.br.deaths}</p>
-                                            <p className="card-text mb-0"><strong>Games
-                                                Played: </strong>{data[0].response2.br.gamesPlayed}</p>
-                                            <p className="card-text"><strong>Win
-                                                Percentage: </strong>{(data[0].response2.br.wins / data[0].response2.br.gamesPlayed * 100).toFixed(2)}%
-                                            </p>
-                                        </div>
-                                        <div className="card-footer text-center"><a
-                                            href="https://cod.tracker.gg/warzone/profile/battlenet/ATN3%232332/matches"
-                                            className="text-decoration-none" target="_blank">
-                                            <button className="btn btn-primary btn-block">Recent Games</button>
-                                        </a></div>
-                                    </div>
-                                </div>
-
-                                <div className="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{data[1].id}</h5>
-                                            <p className="card-text mb-0">
-                                                <strong>KD: </strong>{data[1].response2.br.kdRatio.toFixed(2)}</p>
-                                            <p className="card-text mb-0">
-                                                <strong>Wins: </strong>{data[1].response2.br.wins}
-                                            </p>
-                                            <p className="card-text mb-0">
-                                                <strong>Kills: </strong>{data[1].response2.br.kills}</p>
-                                            <p className="card-text mb-0">
-                                                <strong>Deaths: </strong>{data[1].response2.br.deaths}</p>
-                                            <p className="card-text mb-0"><strong>Games
-                                                Played: </strong>{data[1].response2.br.gamesPlayed}</p>
-                                            <p className="card-text"><strong>Win
-                                                Percentage: </strong>{(data[1].response2.br.wins / data[1].response2.br.gamesPlayed * 100).toFixed(2)}%
-                                            </p>
-                                        </div>
-                                        <div className="card-footer text-center"><a
-                                            href="https://cod.tracker.gg/warzone/profile/atvi/gainsley%20harriot%231544298/matches"
-                                            className="text-decoration-none" target="_blank">
-                                            <button className="btn btn-primary btn-block">Recent Games</button>
-                                        </a></div>
-                                    </div>
-                                </div>
-
-                                <div className="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{data[2].id}</h5>
-                                            <p className="card-text mb-0">
-                                                <strong>KD: </strong>{data[2].response2.br.kdRatio.toFixed(2)}</p>
-                                            <p className="card-text mb-0">
-                                                <strong>Wins: </strong>{data[2].response2.br.wins}</p>
-                                            <p className="card-text mb-0">
-                                                <strong>Kills: </strong>{data[2].response2.br.kills}
-                                            </p>
-                                            <p className="card-text mb-0">
-                                                <strong>Deaths: </strong>{data[2].response2.br.deaths}
-                                            </p>
-                                            <p className="card-text mb-0"><strong>Games
-                                                Played: </strong>{data[2].response2.br.gamesPlayed}</p>
-                                            <p className="card-text"><strong>Win
-                                                Percentage: </strong>{(data[2].response2.br.wins / data[2].response2.br.gamesPlayed * 100).toFixed(2)}%
-                                            </p>
-                                        </div>
-                                        <div className="card-footer text-center"><a
-                                            href="https://cod.tracker.gg/warzone/profile/atvi/koostacy%239136361/matches"
-                                            className="text-decoration-none" target="_blank">
-                                            <button className="btn btn-primary btn-block">Recent Games</button>
-                                        </a></div>
-                                    </div>
-                                </div>
-
-                                <div className="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{data[3].id}</h5>
-                                            <p className="card-text mb-0">
-                                                <strong>KD: </strong>{data[3].response2.br.kdRatio.toFixed(2)}</p>
-                                            <p className="card-text mb-0">
-                                                <strong>Wins: </strong>{data[3].response2.br.wins}</p>
-                                            <p className="card-text mb-0">
-                                                <strong>Kills: </strong>{data[3].response2.br.kills}
-                                            </p>
-                                            <p className="card-text mb-0">
-                                                <strong>Deaths: </strong>{data[3].response2.br.deaths}
-                                            </p>
-                                            <p className="card-text mb-0"><strong>Games
-                                                Played: </strong>{data[3].response2.br.gamesPlayed}</p>
-                                            <p className="card-text"><strong>Win
-                                                Percentage: </strong>{(data[3].response2.br.wins / data[3].response2.br.gamesPlayed * 100).toFixed(2)}%
-                                            </p>
-                                        </div>
-                                        <div className="card-footer text-center"><a
-                                            href="https://cod.tracker.gg/warzone/profile/atvi/jimmy%20jams%235066697/matches"
-                                            className="text-decoration-none" target="_blank">
-                                            <button className="btn btn-primary btn-block">Recent Games</button>
-                                        </a></div>
-                                    </div>
-                                </div>
-
-                                <div className="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{data[4].id}</h5>
-                                            <p className="card-text mb-0">
-                                                <strong>KD: </strong>{data[4].response2.br.kdRatio.toFixed(2)}</p>
-                                            <p className="card-text mb-0">
-                                                <strong>Wins: </strong>{data[4].response2.br.wins}
-                                            </p>
-                                            <p className="card-text mb-0">
-                                                <strong>Kills: </strong>{data[4].response2.br.kills}
-                                            </p>
-                                            <p className="card-text mb-0">
-                                                <strong>Deaths: </strong>{data[4].response2.br.deaths}</p>
-                                            <p className="card-text mb-0"><strong>Games
-                                                Played: </strong>{data[4].response2.br.gamesPlayed}</p>
-                                            <p className="card-text"><strong>Win
-                                                Percentage: </strong>{(data[4].response2.br.wins / data[4].response2.br.gamesPlayed * 100).toFixed(2)}%
-                                            </p>
-                                        </div>
-                                        <div className="card-footer text-center"><a
-                                            href="https://cod.tracker.gg/warzone/profile/atvi/nayff24%238295391/matches"
-                                            className="text-decoration-none" target="_blank">
-                                            <button className="btn btn-primary btn-block">Recent Games</button>
-                                        </a></div>
-                                    </div>
-                                </div>
-
-                                <div className="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{data[5].id}</h5>
-                                            <p className="card-text mb-0">
-                                                <strong>KD: </strong>{data[5].response2.br.kdRatio.toFixed(2)}</p>
-                                            <p className="card-text mb-0">
-                                                <strong>Wins: </strong>{data[5].response2.br.wins}</p>
-                                            <p className="card-text mb-0">
-                                                <strong>Kills: </strong>{data[5].response2.br.kills}
-                                            </p>
-                                            <p className="card-text mb-0">
-                                                <strong>Deaths: </strong>{data[5].response2.br.deaths}
-                                            </p>
-                                            <p className="card-text mb-0"><strong>Games
-                                                Played: </strong>{data[5].response2.br.gamesPlayed}</p>
-                                            <p className="card-text"><strong>Win
-                                                Percentage: </strong>{(data[5].response2.br.wins / data[5].response2.br.gamesPlayed * 100).toFixed(2)}%
-                                            </p>
-                                        </div>
-                                        <div className="card-footer text-center"><a
-                                            href="https://cod.tracker.gg/warzone/profile/battlenet/Redox%2321477/matches"
-                                            className="text-decoration-none" target="_blank">
-                                            <button className="btn btn-primary btn-block">Recent Games</button>
-                                        </a></div>
-                                    </div>
-                                </div>
+                                {data.map((user) => (
+                                    <Lifetime
+                                        username={`${user.id}`}
+                                        kd={`${user.response2.br.kdRatio.toFixed(2)}`}
+                                        wins={`${user.response2.br.wins}`}
+                                        kills={`${user.response2.br.kills}`}
+                                        deaths={`${user.response2.br.deaths}`}
+                                        gamesPlayed={`${user.response2.br.gamesPlayed}`}
+                                        winPercentage={`${(user.response2.br.wins / user.response2.br.gamesPlayed * 100).toFixed(2)}`}
+                                    />
+                                ))}
                             </div>
                         </div>
 
 
                         <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div className="row justify-content-center mt-3">
-                                <div className="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{weeklyData[0].id}</h5>
-                                            {weeklyData[0].response2.wz.all.properties === null ? <p>{weeklyData[0].id} hasn't played any games this week! Or his account is set to private >:(</p> : <><p className="card-text mb-0">
-                                                <strong>KD: </strong>{weeklyData[0].response2.wz.all.properties.kdRatio.toFixed(2)}</p>
-                                                <p className="card-text mb-0"><strong>Kills: </strong>{weeklyData[0].response2.wz.all.properties.kills}
-                                                </p>
-                                                <p className="card-text mb-0">
-                                                    <strong>Deaths: </strong>{weeklyData[0].response2.wz.all.properties.deaths}</p>
-                                                <p className="card-text mb-0"><strong>Games
-                                                    Played: </strong>{weeklyData[0].response2.wz.all.properties.matchesPlayed}</p>
-                                                <p className="card-text mb-0">
-                                                    <strong>Kills per Game: </strong>{(weeklyData[0].response2.wz.all.properties.killsPerGame).toFixed(2)}</p></>}
-                                        </div>
-                                    </div>
-                                </div>
+                                {weeklyData.map((user) => {
+                                    if (user.response2.wz.all.properties === null) return (
+                                        <Weekly
+                                            username={`${user.id}`}
+                                            kd={"N/A"}
+                                            kills={"N/A"}
+                                            deaths={"N/A"}
+                                            gamesPlayed={"N/A"}
+                                            killsPerGame={"N/A"}
+                                        />
+                                    )
 
-                                <div className="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{weeklyData[1].id}</h5>
-                                            {weeklyData[1].response2.wz.all.properties === null ? <p>{weeklyData[1].id} hasn't played any games this week! Or his account is set to private >:(</p> : <><p className="card-text mb-0">
-                                                <strong>KD: </strong>{weeklyData[1].response2.wz.all.properties.kdRatio.toFixed(2)}</p>
-                                                <p className="card-text mb-0"><strong>Kills: </strong>{weeklyData[1].response2.wz.all.properties.kills}
-                                                </p>
-                                                <p className="card-text mb-0">
-                                                    <strong>Deaths: </strong>{weeklyData[1].response2.wz.all.properties.deaths}</p>
-                                                <p className="card-text mb-0"><strong>Games
-                                                    Played: </strong>{weeklyData[1].response2.wz.all.properties.matchesPlayed}</p>
-                                                <p className="card-text mb-0">
-                                                    <strong>Kills per Game: </strong>{(weeklyData[1].response2.wz.all.properties.killsPerGame).toFixed(2)}</p></>}
-                                        </div>
-                                    </div>
-                                </div>
+                                    return (
+                                        <Weekly
+                                            username={`${user.id}`}
+                                            kd={`${user.response2.wz.all.properties.kdRatio.toFixed(2)}`}
+                                            kills={`${user.response2.wz.all.properties.kills}`}
+                                            deaths={`${user.response2.wz.all.properties.deaths}`}
+                                            gamesPlayed={`${user.response2.wz.all.properties.matchesPlayed}`}
+                                            killsPerGame={`${user.response2.wz.all.properties.killsPerGame.toFixed(2)}`}
+                                        />
+                                    )
+                                })}
 
-                                <div className="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{weeklyData[2].id}</h5>
-                                            {weeklyData[2].response2.wz.all.properties === null ? <p>{weeklyData[2].id} hasn't played any games this week! Or his account is set to private >:(</p> : <><p className="card-text mb-0">
-                                                <strong>KD: </strong>{weeklyData[2].response2.wz.all.properties.kdRatio.toFixed(2)}</p>
-                                                <p className="card-text mb-0"><strong>Kills: </strong>{weeklyData[2].response2.wz.all.properties.kills}
-                                                </p>
-                                                <p className="card-text mb-0">
-                                                    <strong>Deaths: </strong>{weeklyData[2].response2.wz.all.properties.deaths}</p>
-                                                <p className="card-text mb-0"><strong>Games
-                                                    Played: </strong>{weeklyData[2].response2.wz.all.properties.matchesPlayed}</p>
-                                                <p className="card-text mb-0">
-                                                    <strong>Kills per Game: </strong>{(weeklyData[2].response2.wz.all.properties.killsPerGame).toFixed(2)}</p></>}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{weeklyData[3].id}</h5>
-                                            {weeklyData[3].response2.wz.all.properties === null ? <p>{weeklyData[3].id} hasn't played any games this week! Or his account is set to private >:(</p> : <><p className="card-text mb-0">
-                                                <strong>KD: </strong>{weeklyData[3].response2.wz.all.properties.kdRatio.toFixed(2)}</p>
-                                                <p className="card-text mb-0"><strong>Kills: </strong>{weeklyData[3].response2.wz.all.properties.kills}
-                                                </p>
-                                                <p className="card-text mb-0">
-                                                    <strong>Deaths: </strong>{weeklyData[3].response2.wz.all.properties.deaths}</p>
-                                                <p className="card-text mb-0"><strong>Games
-                                                    Played: </strong>{weeklyData[3].response2.wz.all.properties.matchesPlayed}</p>
-                                                <p className="card-text mb-0">
-                                                    <strong>Kills per Game: </strong>{(weeklyData[3].response2.wz.all.properties.killsPerGame).toFixed(2)}</p></>}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{weeklyData[4].id}</h5>
-                                            {weeklyData[4].response2.wz.all.properties === null ? <p>{weeklyData[4].id} hasn't played any games this week! Or his account is set to private >:(</p> : <><p className="card-text mb-0">
-                                                <strong>KD: </strong>{weeklyData[4].response2.wz.all.properties.kdRatio.toFixed(2)}</p>
-                                                <p className="card-text mb-0"><strong>Kills: </strong>{weeklyData[4].response2.wz.all.properties.kills}
-                                                </p>
-                                                <p className="card-text mb-0">
-                                                    <strong>Deaths: </strong>{weeklyData[4].response2.wz.all.properties.deaths}</p>
-                                                <p className="card-text mb-0"><strong>Games
-                                                    Played: </strong>{weeklyData[4].response2.wz.all.properties.matchesPlayed}</p>
-                                                <p className="card-text mb-0">
-                                                    <strong>Kills per Game: </strong>{(weeklyData[4].response2.wz.all.properties.killsPerGame).toFixed(2)}</p></>}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{weeklyData[5].id}</h5>
-                                            {weeklyData[5].response2.wz.all.properties === null ? <p>{weeklyData[5].id} hasn't played any games this week! Or his account is set to private >:(</p> : <><p className="card-text mb-0">
-                                                <strong>KD: </strong>{weeklyData[5].response2.wz.all.properties.kdRatio.toFixed(2)}</p>
-                                            <p className="card-text mb-0"><strong>Kills: </strong>{weeklyData[5].response2.wz.all.properties.kills}
-                                            </p>
-                                            <p className="card-text mb-0">
-                                                <strong>Deaths: </strong>{weeklyData[5].response2.wz.all.properties.deaths}</p>
-                                            <p className="card-text mb-0"><strong>Games
-                                                Played: </strong>{weeklyData[5].response2.wz.all.properties.matchesPlayed}</p>
-                                            <p className="card-text mb-0">
-                                                <strong>Kills per Game: </strong>{(weeklyData[5].response2.wz.all.properties.killsPerGame).toFixed(2)}</p></>}
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-
 
                         <div className="tab-pane fade" id="games" role="tabpanel" aria-labelledby="games-tab">
                             <div className="row justify-content-center mt-3">
