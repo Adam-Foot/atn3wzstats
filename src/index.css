@@ -51,10 +51,3 @@ code {
     transform: rotate(360deg);
   }
 }
-
-.card-expand {
-  transition: all 0.2s ease-in-out;
-}
-.card-expand:hover {
-  transform: scale(1.03);
-}

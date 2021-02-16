@@ -5,6 +5,8 @@ import './index.css';
 import './assets/bootstrap.css';
 
 import App from './App';
+import Test from "./Test";
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
