@@ -241,7 +241,9 @@ class App extends Component {
 
                         <div className="tab-pane fade" id="games" role="tabpanel" aria-labelledby="games-tab">
                             <div className="row justify-content-center mt-3">
-                                <div className="col-12 mb-3 text-white">
+
+                                {/* ATN3 */}
+                                <div className="col-12 col-lg-6 mb-3 text-white">
                                     <div className="card bg-dark shadow-lg border-danger card-expand">
                                         <div className="card-body">
                                             <h5 className="card-title mb-3">{weeklyGames[0].id}</h5>
@@ -346,11 +348,113 @@ class App extends Component {
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingSix">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseSixAdam"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[0].response2.matches[5].playerStats.teamPlacement ? '??' : weeklyGames[0].response2.matches[5].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[0].response2.matches[5].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[0].response2.matches[5].mode === 'br_brquads' ? 'Quads' : weeklyGames[0].response2.matches[5].mode === 'br_brtrios' ? 'Trios' : weeklyGames[0].response2.matches[5].mode === 'br_brduos' ? 'Duos' : weeklyGames[0].response2.matches[5].mode === 'br_brsolo' ? 'Solo' : weeklyGames[0].response2.matches[5].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[0].response2.matches[5].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[0].response2.matches[5].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[0].response2.matches[5].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[0].response2.matches[5].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSixAdam" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[0].response2.matches[5].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[0].response2.matches[5].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[0].response2.matches[5].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[0].response2.matches[5].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[0].response2.matches[5].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[0].response2.matches[5].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingSeven">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseSevenAdam"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[0].response2.matches[6].playerStats.teamPlacement ? '??' : weeklyGames[0].response2.matches[6].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[0].response2.matches[6].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[0].response2.matches[6].mode === 'br_brquads' ? 'Quads' : weeklyGames[0].response2.matches[6].mode === 'br_brtrios' ? 'Trios' : weeklyGames[0].response2.matches[6].mode === 'br_brduos' ? 'Duos' : weeklyGames[0].response2.matches[6].mode === 'br_brsolo' ? 'Solo' : weeklyGames[0].response2.matches[6].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[0].response2.matches[6].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[0].response2.matches[6].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[0].response2.matches[6].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[0].response2.matches[6].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSevenAdam" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[0].response2.matches[6].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[0].response2.matches[6].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[0].response2.matches[6].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[0].response2.matches[6].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[0].response2.matches[6].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[0].response2.matches[6].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingEight">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseEightAdam"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[0].response2.matches[7].playerStats.teamPlacement ? '??' : weeklyGames[0].response2.matches[7].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[0].response2.matches[7].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[0].response2.matches[7].mode === 'br_brquads' ? 'Quads' : weeklyGames[0].response2.matches[7].mode === 'br_brtrios' ? 'Trios' : weeklyGames[0].response2.matches[7].mode === 'br_brduos' ? 'Duos' : weeklyGames[0].response2.matches[7].mode === 'br_brsolo' ? 'Solo' : weeklyGames[0].response2.matches[7].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[0].response2.matches[7].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[0].response2.matches[7].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[0].response2.matches[7].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[0].response2.matches[7].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseEightAdam" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[0].response2.matches[7].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[0].response2.matches[7].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[0].response2.matches[7].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[0].response2.matches[7].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[0].response2.matches[7].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[0].response2.matches[7].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingNine">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseNineAdam"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[0].response2.matches[8].playerStats.teamPlacement ? '??' : weeklyGames[0].response2.matches[8].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[0].response2.matches[8].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[0].response2.matches[8].mode === 'br_brquads' ? 'Quads' : weeklyGames[0].response2.matches[8].mode === 'br_brtrios' ? 'Trios' : weeklyGames[0].response2.matches[8].mode === 'br_brduos' ? 'Duos' : weeklyGames[0].response2.matches[8].mode === 'br_brsolo' ? 'Solo' : weeklyGames[0].response2.matches[8].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[0].response2.matches[8].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[0].response2.matches[8].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[0].response2.matches[8].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[0].response2.matches[8].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseNineAdam" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[0].response2.matches[8].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[0].response2.matches[8].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[0].response2.matches[8].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[0].response2.matches[8].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[0].response2.matches[8].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[0].response2.matches[8].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingTen">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseTenAdam"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[0].response2.matches[9].playerStats.teamPlacement ? '??' : weeklyGames[0].response2.matches[9].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[0].response2.matches[9].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[0].response2.matches[9].mode === 'br_brquads' ? 'Quads' : weeklyGames[0].response2.matches[9].mode === 'br_brtrios' ? 'Trios' : weeklyGames[0].response2.matches[9].mode === 'br_brduos' ? 'Duos' : weeklyGames[0].response2.matches[9].mode === 'br_brsolo' ? 'Solo' : weeklyGames[0].response2.matches[9].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[0].response2.matches[9].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[0].response2.matches[9].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[0].response2.matches[9].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[0].response2.matches[9].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseTenAdam" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[0].response2.matches[9].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[0].response2.matches[9].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[0].response2.matches[9].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[0].response2.matches[9].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[0].response2.matches[9].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[0].response2.matches[9].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-12 mb-3 text-white">
+
+                                {/* KOOSTACY */}
+                                <div className="col-12 col-lg-6 mb-3 text-white">
                                     <div className="card bg-dark shadow-lg border-danger card-expand">
                                         <div className="card-body">
                                             <h5 className="card-title mb-3">{weeklyGames[1].id}</h5>
@@ -455,11 +559,113 @@ class App extends Component {
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingSix">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseSixMark"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[1].response2.matches[5].playerStats.teamPlacement ? '??' : weeklyGames[1].response2.matches[5].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[1].response2.matches[5].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[1].response2.matches[5].mode === 'br_brquads' ? 'Quads' : weeklyGames[1].response2.matches[5].mode === 'br_brtrios' ? 'Trios' : weeklyGames[1].response2.matches[5].mode === 'br_brduos' ? 'Duos' : weeklyGames[1].response2.matches[5].mode === 'br_brsolo' ? 'Solo' : weeklyGames[1].response2.matches[5].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[1].response2.matches[5].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[1].response2.matches[5].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[1].response2.matches[5].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[1].response2.matches[5].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSixMark" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[1].response2.matches[5].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[1].response2.matches[5].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[1].response2.matches[5].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[1].response2.matches[5].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[1].response2.matches[5].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[1].response2.matches[5].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingSeven">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseSevenMark"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[1].response2.matches[6].playerStats.teamPlacement ? '??' : weeklyGames[1].response2.matches[6].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[1].response2.matches[6].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[1].response2.matches[6].mode === 'br_brquads' ? 'Quads' : weeklyGames[1].response2.matches[6].mode === 'br_brtrios' ? 'Trios' : weeklyGames[1].response2.matches[6].mode === 'br_brduos' ? 'Duos' : weeklyGames[1].response2.matches[6].mode === 'br_brsolo' ? 'Solo' : weeklyGames[1].response2.matches[6].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[1].response2.matches[6].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[1].response2.matches[6].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[1].response2.matches[6].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[1].response2.matches[6].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSevenMark" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[1].response2.matches[6].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[1].response2.matches[6].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[1].response2.matches[6].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[1].response2.matches[6].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[1].response2.matches[6].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[1].response2.matches[6].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingEight">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseEightMark"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[1].response2.matches[7].playerStats.teamPlacement ? '??' : weeklyGames[1].response2.matches[7].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[1].response2.matches[7].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[1].response2.matches[7].mode === 'br_brquads' ? 'Quads' : weeklyGames[1].response2.matches[7].mode === 'br_brtrios' ? 'Trios' : weeklyGames[1].response2.matches[7].mode === 'br_brduos' ? 'Duos' : weeklyGames[1].response2.matches[7].mode === 'br_brsolo' ? 'Solo' : weeklyGames[1].response2.matches[7].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[1].response2.matches[7].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[1].response2.matches[7].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[1].response2.matches[7].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[1].response2.matches[7].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseEightMark" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[1].response2.matches[7].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[1].response2.matches[7].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[1].response2.matches[7].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[1].response2.matches[7].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[1].response2.matches[7].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[1].response2.matches[7].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingNine">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseNineMark"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[1].response2.matches[8].playerStats.teamPlacement ? '??' : weeklyGames[1].response2.matches[8].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[1].response2.matches[8].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[1].response2.matches[8].mode === 'br_brquads' ? 'Quads' : weeklyGames[1].response2.matches[8].mode === 'br_brtrios' ? 'Trios' : weeklyGames[1].response2.matches[8].mode === 'br_brduos' ? 'Duos' : weeklyGames[1].response2.matches[8].mode === 'br_brsolo' ? 'Solo' : weeklyGames[1].response2.matches[8].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[1].response2.matches[8].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[1].response2.matches[8].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[1].response2.matches[8].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[1].response2.matches[8].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseNineMark" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[1].response2.matches[8].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[1].response2.matches[8].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[1].response2.matches[8].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[1].response2.matches[8].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[1].response2.matches[8].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[1].response2.matches[8].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingTen">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseTenMark"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[1].response2.matches[9].playerStats.teamPlacement ? '??' : weeklyGames[1].response2.matches[9].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[1].response2.matches[9].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[1].response2.matches[9].mode === 'br_brquads' ? 'Quads' : weeklyGames[1].response2.matches[9].mode === 'br_brtrios' ? 'Trios' : weeklyGames[1].response2.matches[9].mode === 'br_brduos' ? 'Duos' : weeklyGames[1].response2.matches[9].mode === 'br_brsolo' ? 'Solo' : weeklyGames[1].response2.matches[9].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[1].response2.matches[9].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[1].response2.matches[9].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[1].response2.matches[9].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[1].response2.matches[9].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseTenMark" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[1].response2.matches[9].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[1].response2.matches[9].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[1].response2.matches[9].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[1].response2.matches[9].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[1].response2.matches[9].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[1].response2.matches[9].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-12 mb-3 text-white">
+
+                                {/* MIGHTYOWL */}
+                                <div className="col-12 col-lg-6 mb-3 text-white">
                                     <div className="card bg-dark shadow-lg border-danger card-expand">
                                         <div className="card-body">
                                             <h5 className="card-title mb-3">{weeklyGames[2].id}</h5>
@@ -564,11 +770,113 @@ class App extends Component {
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingSix">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseSixJoe"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[2].response2.matches[5].playerStats.teamPlacement ? '??' : weeklyGames[2].response2.matches[5].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[2].response2.matches[5].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[2].response2.matches[5].mode === 'br_brquads' ? 'Quads' : weeklyGames[2].response2.matches[5].mode === 'br_brtrios' ? 'Trios' : weeklyGames[2].response2.matches[5].mode === 'br_brduos' ? 'Duos' : weeklyGames[2].response2.matches[5].mode === 'br_brsolo' ? 'Solo' : weeklyGames[2].response2.matches[5].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[2].response2.matches[5].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[2].response2.matches[5].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[2].response2.matches[5].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[2].response2.matches[5].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSixJoe" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[2].response2.matches[5].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[2].response2.matches[5].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[2].response2.matches[5].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[2].response2.matches[5].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[2].response2.matches[5].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[2].response2.matches[5].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingSeven">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseSevenJoe"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[2].response2.matches[6].playerStats.teamPlacement ? '??' : weeklyGames[2].response2.matches[6].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[2].response2.matches[6].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[2].response2.matches[6].mode === 'br_brquads' ? 'Quads' : weeklyGames[2].response2.matches[6].mode === 'br_brtrios' ? 'Trios' : weeklyGames[2].response2.matches[6].mode === 'br_brduos' ? 'Duos' : weeklyGames[2].response2.matches[6].mode === 'br_brsolo' ? 'Solo' : weeklyGames[2].response2.matches[6].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[2].response2.matches[6].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[2].response2.matches[6].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[2].response2.matches[6].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[2].response2.matches[6].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSevenJoe" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[2].response2.matches[6].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[2].response2.matches[6].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[2].response2.matches[6].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[2].response2.matches[6].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[2].response2.matches[6].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[2].response2.matches[6].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingEight">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseEightJoe"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[2].response2.matches[7].playerStats.teamPlacement ? '??' : weeklyGames[2].response2.matches[7].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[2].response2.matches[7].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[2].response2.matches[7].mode === 'br_brquads' ? 'Quads' : weeklyGames[2].response2.matches[7].mode === 'br_brtrios' ? 'Trios' : weeklyGames[2].response2.matches[7].mode === 'br_brduos' ? 'Duos' : weeklyGames[2].response2.matches[7].mode === 'br_brsolo' ? 'Solo' : weeklyGames[2].response2.matches[7].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[2].response2.matches[7].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[2].response2.matches[7].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[2].response2.matches[7].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[2].response2.matches[7].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseEightJoe" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[2].response2.matches[7].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[2].response2.matches[7].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[2].response2.matches[7].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[2].response2.matches[7].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[2].response2.matches[7].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[2].response2.matches[7].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingNine">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseNineJoe"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[2].response2.matches[8].playerStats.teamPlacement ? '??' : weeklyGames[2].response2.matches[8].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[2].response2.matches[8].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[2].response2.matches[8].mode === 'br_brquads' ? 'Quads' : weeklyGames[2].response2.matches[8].mode === 'br_brtrios' ? 'Trios' : weeklyGames[2].response2.matches[8].mode === 'br_brduos' ? 'Duos' : weeklyGames[2].response2.matches[8].mode === 'br_brsolo' ? 'Solo' : weeklyGames[2].response2.matches[8].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[2].response2.matches[8].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[2].response2.matches[8].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[2].response2.matches[8].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[2].response2.matches[8].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseNineJoe" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[2].response2.matches[8].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[2].response2.matches[8].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[2].response2.matches[8].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[2].response2.matches[8].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[2].response2.matches[8].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[2].response2.matches[8].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingTen">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseTenJoe"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[2].response2.matches[9].playerStats.teamPlacement ? '??' : weeklyGames[2].response2.matches[9].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[2].response2.matches[9].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[2].response2.matches[9].mode === 'br_brquads' ? 'Quads' : weeklyGames[2].response2.matches[9].mode === 'br_brtrios' ? 'Trios' : weeklyGames[2].response2.matches[9].mode === 'br_brduos' ? 'Duos' : weeklyGames[2].response2.matches[9].mode === 'br_brsolo' ? 'Solo' : weeklyGames[2].response2.matches[9].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[2].response2.matches[9].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[2].response2.matches[9].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[2].response2.matches[9].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[2].response2.matches[9].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseTenJoe" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[2].response2.matches[9].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[2].response2.matches[9].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[2].response2.matches[9].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[2].response2.matches[9].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[2].response2.matches[9].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[2].response2.matches[9].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-12 mb-3 text-white">
+
+                                {/* NAYFF24 */}
+                                <div className="col-12 col-lg-6 mb-3 text-white">
                                     <div className="card bg-dark shadow-lg border-danger card-expand">
                                         <div className="card-body">
                                             <h5 className="card-title mb-3">{weeklyGames[3].id}</h5>
@@ -673,11 +981,113 @@ class App extends Component {
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingSix">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseSixNathan"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[3].response2.matches[5].playerStats.teamPlacement ? '??' : weeklyGames[3].response2.matches[5].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[3].response2.matches[5].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[3].response2.matches[5].mode === 'br_brquads' ? 'Quads' : weeklyGames[3].response2.matches[5].mode === 'br_brtrios' ? 'Trios' : weeklyGames[3].response2.matches[5].mode === 'br_brduos' ? 'Duos' : weeklyGames[3].response2.matches[5].mode === 'br_brsolo' ? 'Solo' : weeklyGames[3].response2.matches[5].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[3].response2.matches[5].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[3].response2.matches[5].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[3].response2.matches[5].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[3].response2.matches[5].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSixNathan" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[3].response2.matches[5].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[3].response2.matches[5].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[3].response2.matches[5].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[3].response2.matches[5].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[3].response2.matches[5].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[3].response2.matches[5].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingSeven">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseSevenNathan"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[3].response2.matches[6].playerStats.teamPlacement ? '??' : weeklyGames[3].response2.matches[6].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[3].response2.matches[6].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[3].response2.matches[6].mode === 'br_brquads' ? 'Quads' : weeklyGames[3].response2.matches[6].mode === 'br_brtrios' ? 'Trios' : weeklyGames[3].response2.matches[6].mode === 'br_brduos' ? 'Duos' : weeklyGames[3].response2.matches[6].mode === 'br_brsolo' ? 'Solo' : weeklyGames[3].response2.matches[6].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[3].response2.matches[6].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[3].response2.matches[6].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[3].response2.matches[6].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[3].response2.matches[6].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSevenNathan" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[3].response2.matches[6].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[3].response2.matches[6].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[3].response2.matches[6].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[3].response2.matches[6].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[3].response2.matches[6].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[3].response2.matches[6].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingEight">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseEightNathan"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[3].response2.matches[7].playerStats.teamPlacement ? '??' : weeklyGames[3].response2.matches[7].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[3].response2.matches[7].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[3].response2.matches[7].mode === 'br_brquads' ? 'Quads' : weeklyGames[3].response2.matches[7].mode === 'br_brtrios' ? 'Trios' : weeklyGames[3].response2.matches[7].mode === 'br_brduos' ? 'Duos' : weeklyGames[3].response2.matches[7].mode === 'br_brsolo' ? 'Solo' : weeklyGames[3].response2.matches[7].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[3].response2.matches[7].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[3].response2.matches[7].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[3].response2.matches[7].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[3].response2.matches[7].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseEightNathan" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[3].response2.matches[7].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[3].response2.matches[7].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[3].response2.matches[7].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[3].response2.matches[7].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[3].response2.matches[7].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[3].response2.matches[7].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingNine">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseNineNathan"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[3].response2.matches[8].playerStats.teamPlacement ? '??' : weeklyGames[3].response2.matches[8].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[3].response2.matches[8].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[3].response2.matches[8].mode === 'br_brquads' ? 'Quads' : weeklyGames[3].response2.matches[8].mode === 'br_brtrios' ? 'Trios' : weeklyGames[3].response2.matches[8].mode === 'br_brduos' ? 'Duos' : weeklyGames[3].response2.matches[8].mode === 'br_brsolo' ? 'Solo' : weeklyGames[3].response2.matches[8].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[3].response2.matches[8].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[3].response2.matches[8].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[3].response2.matches[8].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[3].response2.matches[8].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseNineNathan" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[3].response2.matches[8].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[3].response2.matches[8].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[3].response2.matches[8].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[3].response2.matches[8].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[3].response2.matches[8].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[3].response2.matches[8].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingTen">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseTenNathan"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[3].response2.matches[9].playerStats.teamPlacement ? '??' : weeklyGames[3].response2.matches[9].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[3].response2.matches[9].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[3].response2.matches[9].mode === 'br_brquads' ? 'Quads' : weeklyGames[3].response2.matches[9].mode === 'br_brtrios' ? 'Trios' : weeklyGames[3].response2.matches[9].mode === 'br_brduos' ? 'Duos' : weeklyGames[3].response2.matches[9].mode === 'br_brsolo' ? 'Solo' : weeklyGames[3].response2.matches[9].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[3].response2.matches[9].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[3].response2.matches[9].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[3].response2.matches[9].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[3].response2.matches[9].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseTenNathan" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[3].response2.matches[9].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[3].response2.matches[9].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[3].response2.matches[9].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[3].response2.matches[9].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[3].response2.matches[9].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[3].response2.matches[9].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-12 mb-3 text-white">
+
+                                {/* REDOX */}
+                                <div className="col-12 col-lg-6 mb-3 text-white">
                                     <div className="card bg-dark shadow-lg border-danger card-expand">
                                         <div className="card-body">
                                             <h5 className="card-title mb-3">{weeklyGames[4].id}</h5>
@@ -782,10 +1192,111 @@ class App extends Component {
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingSix">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseSixDom"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[4].response2.matches[5].playerStats.teamPlacement ? '??' : weeklyGames[4].response2.matches[5].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[4].response2.matches[5].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[4].response2.matches[5].mode === 'br_brquads' ? 'Quads' : weeklyGames[4].response2.matches[5].mode === 'br_brtrios' ? 'Trios' : weeklyGames[4].response2.matches[5].mode === 'br_brduos' ? 'Duos' : weeklyGames[4].response2.matches[5].mode === 'br_brsolo' ? 'Solo' : weeklyGames[4].response2.matches[5].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[4].response2.matches[5].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[4].response2.matches[5].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[4].response2.matches[5].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[4].response2.matches[5].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSixDom" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[4].response2.matches[5].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[4].response2.matches[5].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[4].response2.matches[5].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[4].response2.matches[5].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[4].response2.matches[5].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[4].response2.matches[5].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingSeven">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseSevenDom"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[4].response2.matches[6].playerStats.teamPlacement ? '??' : weeklyGames[4].response2.matches[6].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[4].response2.matches[6].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[4].response2.matches[6].mode === 'br_brquads' ? 'Quads' : weeklyGames[4].response2.matches[6].mode === 'br_brtrios' ? 'Trios' : weeklyGames[4].response2.matches[6].mode === 'br_brduos' ? 'Duos' : weeklyGames[4].response2.matches[6].mode === 'br_brsolo' ? 'Solo' : weeklyGames[4].response2.matches[6].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[4].response2.matches[6].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[4].response2.matches[6].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[4].response2.matches[6].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[4].response2.matches[6].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSevenDom" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[4].response2.matches[6].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[4].response2.matches[6].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[4].response2.matches[6].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[4].response2.matches[6].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[4].response2.matches[6].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[4].response2.matches[6].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingEight">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseEightDom"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[4].response2.matches[7].playerStats.teamPlacement ? '??' : weeklyGames[4].response2.matches[7].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[4].response2.matches[7].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[4].response2.matches[7].mode === 'br_brquads' ? 'Quads' : weeklyGames[4].response2.matches[7].mode === 'br_brtrios' ? 'Trios' : weeklyGames[4].response2.matches[7].mode === 'br_brduos' ? 'Duos' : weeklyGames[4].response2.matches[7].mode === 'br_brsolo' ? 'Solo' : weeklyGames[4].response2.matches[7].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[4].response2.matches[7].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[4].response2.matches[7].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[4].response2.matches[7].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[4].response2.matches[7].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseEightDom" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[4].response2.matches[7].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[4].response2.matches[7].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[4].response2.matches[7].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[4].response2.matches[7].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[4].response2.matches[7].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[4].response2.matches[7].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingNine">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseNineDom"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[4].response2.matches[8].playerStats.teamPlacement ? '??' : weeklyGames[4].response2.matches[8].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[4].response2.matches[8].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[4].response2.matches[8].mode === 'br_brquads' ? 'Quads' : weeklyGames[4].response2.matches[8].mode === 'br_brtrios' ? 'Trios' : weeklyGames[4].response2.matches[8].mode === 'br_brduos' ? 'Duos' : weeklyGames[4].response2.matches[8].mode === 'br_brsolo' ? 'Solo' : weeklyGames[4].response2.matches[8].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[4].response2.matches[8].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[4].response2.matches[8].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[4].response2.matches[8].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[4].response2.matches[8].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseNineDom" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[4].response2.matches[8].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[4].response2.matches[8].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[4].response2.matches[8].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[4].response2.matches[8].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[4].response2.matches[8].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[4].response2.matches[8].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="accordion-item">
+                                                    <h2 className="accordion-header" id="headingTen">
+                                                        <button className="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseTenDom"
+                                                                aria-expanded="false" aria-controls="collapseFive">
+                                                            <span className="badge bg-danger p-3 rounded-circle w-10">{!weeklyGames[4].response2.matches[9].playerStats.teamPlacement ? '??' : weeklyGames[4].response2.matches[9].playerStats.teamPlacement} </span><span className="me-4 mx-2">{new Date(weeklyGames[4].response2.matches[9].utcStartSeconds * 1000).toLocaleString("en-GB", {year: '2-digit', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'})}</span>{weeklyGames[4].response2.matches[9].mode === 'br_brquads' ? 'Quads' : weeklyGames[4].response2.matches[9].mode === 'br_brtrios' ? 'Trios' : weeklyGames[4].response2.matches[9].mode === 'br_brduos' ? 'Duos' : weeklyGames[4].response2.matches[9].mode === 'br_brsolo' ? 'Solo' : weeklyGames[4].response2.matches[9].mode === 'br_rebirth_rbrthtrios' ? 'Rebirth Trios' : weeklyGames[4].response2.matches[9].mode === 'br_rebirth_rbrthduos' ? 'Rebirth Duos' : weeklyGames[4].response2.matches[9].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Solo' : weeklyGames[4].response2.matches[9].mode === 'br_rebirth_rbrthsolo' ? 'Rebirth Quads' : weeklyGames[4].response2.matches[9].mode === 'brtdm_rmbl' ? 'Warzone Rumble' : 'Unknown Gamemode'}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseTenDom" className="accordion-collapse collapse"
+                                                         aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                                                        <div className="accordion-body">
+                                                            <p className="mb-0"><strong>Kills: </strong>{weeklyGames[4].response2.matches[9].playerStats.kills}</p>
+                                                            <p className="mb-0"><strong>Deaths: </strong>{weeklyGames[4].response2.matches[9].playerStats.deaths}</p>
+                                                            <p className="mb-0"><strong>KD: </strong>{(weeklyGames[4].response2.matches[9].playerStats.kdRatio).toFixed(2)}</p>
+                                                            <p className="mb-0"><strong>Score/minute: </strong>{(weeklyGames[4].response2.matches[9].playerStats.scorePerMinute).toFixed(0)}</p>
+                                                            <p className="mb-0"><strong>Damage: </strong>{weeklyGames[4].response2.matches[9].playerStats.damageDone}</p>
+                                                            <p><strong>Damage Taken: </strong>{weeklyGames[4].response2.matches[9].playerStats.damageTaken}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
 
@@ -798,7 +1309,7 @@ class App extends Component {
                                         <li>Show ranks of matches based on average KD of lobby (similar to sbmmwarzone)</li>
                                         <li>Have countdown timer show seconds as well as minutes</li>
                                         <li>Show squad stats in recent games</li>
-                                        <li>Show 10 most recent games as opposed to 5</li>
+                                        <li className="text-decoration-line-through">Show 10 most recent games as opposed to 5</li>
                                         <li>Render recent games dynamically rather than each of them be hard-coded</li>
                                         <li>Have the site render new stats automatically when they are fetched, allowing the user to see new stats without refreshing the page</li>
                                         <li className="text-decoration-line-through">Make the site look nicer</li>
