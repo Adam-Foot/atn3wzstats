@@ -6448,6 +6448,10 @@ textarea.form-control-lg {
   border-width: 5px !important;
 }
 
+.w-10 {
+  width: 45px !important;
+}
+
 .w-25 {
   width: 25% !important;
 }
