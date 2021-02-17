@@ -164,7 +164,7 @@ class App extends Component {
                 <div className="container mt-5">
                     <div className="row justify-content-center mb-5">
                         <div className="col-12 text-end">
-                            <h5 className="text-white">Stats update in <strong><span>{currentTime}</span> minutes</strong></h5>
+                            <h5 className="text-white">Stats updating in <strong><span className="text-danger">{currentTime} minutes</span></strong></h5>
                         </div>
                     </div>
 
@@ -241,8 +241,8 @@ class App extends Component {
 
                         <div className="tab-pane fade" id="games" role="tabpanel" aria-labelledby="games-tab">
                             <div className="row justify-content-center mt-3">
-                                <div className="col-12 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
+                                <div className="col-12 mb-3 text-white">
+                                    <div className="card bg-dark shadow-lg border-danger card-expand">
                                         <div className="card-body">
                                             <h5 className="card-title mb-3">{weeklyGames[0].id}</h5>
                                             <div className="accordion" id="accordionExample">
@@ -350,8 +350,8 @@ class App extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-12 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
+                                <div className="col-12 mb-3 text-white">
+                                    <div className="card bg-dark shadow-lg border-danger card-expand">
                                         <div className="card-body">
                                             <h5 className="card-title mb-3">{weeklyGames[1].id}</h5>
                                             <div className="accordion" id="accordionExample2">
@@ -459,8 +459,8 @@ class App extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-12 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
+                                <div className="col-12 mb-3 text-white">
+                                    <div className="card bg-dark shadow-lg border-danger card-expand">
                                         <div className="card-body">
                                             <h5 className="card-title mb-3">{weeklyGames[2].id}</h5>
                                             <div className="accordion" id="accordionExample3">
@@ -568,8 +568,8 @@ class App extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-12 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
+                                <div className="col-12 mb-3 text-white">
+                                    <div className="card bg-dark shadow-lg border-danger card-expand">
                                         <div className="card-body">
                                             <h5 className="card-title mb-3">{weeklyGames[3].id}</h5>
                                             <div className="accordion" id="accordionExample4">
@@ -677,8 +677,8 @@ class App extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-12 mb-3">
-                                    <div className="card shadow-lg border-danger card-expand">
+                                <div className="col-12 mb-3 text-white">
+                                    <div className="card bg-dark shadow-lg border-danger card-expand">
                                         <div className="card-body">
                                             <h5 className="card-title mb-3">{weeklyGames[4].id}</h5>
                                             <div className="accordion" id="accordionExample5">
@@ -801,7 +801,7 @@ class App extends Component {
                                         <li>Show 10 most recent games as opposed to 5</li>
                                         <li>Render recent games dynamically rather than each of them be hard-coded</li>
                                         <li>Have the site render new stats automatically when they are fetched, allowing the user to see new stats without refreshing the page</li>
-                                        <li>Make the site look nicer</li>
+                                        <li className="text-decoration-line-through">Make the site look nicer</li>
                                         <li>Save stats in local storage of users' browsers - Saving on resources</li>
                                     </ul>
                                 </div>
