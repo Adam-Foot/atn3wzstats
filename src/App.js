@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {db} from "./firebase";
 
-import logo from './assets/logo.png';
-
 class App extends Component {
     constructor(props) {
         super(props);
@@ -76,7 +74,20 @@ class App extends Component {
             isLoading
         } = this.state;
 
-        const Lifetime = ({username, kd, wins, kills, deaths, gamesPlayed, winPercentage}) => (
+        function secondsToTime(seconds) {
+            seconds = Number(seconds);
+            let d = Math.floor(seconds / (3600*24));
+            let h = Math.floor(seconds % (3600*24) / 3600);
+            let m = Math.floor(seconds % 3600 / 60);
+
+            let dDisplay = d > 0 ? d + (d === 1 ? " day, " : " days, ") : "";
+            let hDisplay = h > 0 ? h + (h === 1 ? " hour, " : " hours, ") : "";
+            let mDisplay = m > 0 ? m + (m === 1 ? " minute, " : " minutes ") : "";
+
+            return dDisplay + hDisplay + mDisplay;
+        }
+
+        const Lifetime = ({username, kd, wins, kills, deaths, gamesPlayed, winPercentage, revives, top5, top10, top25, timePlayed}) => (
             <div className="col-12 col-md-6 col-lg-4 mb-3">
                 <div className="card bg-dark shadow-lg border-danger card-expand">
                     <div className="card-body text-white">
@@ -93,8 +104,18 @@ class App extends Component {
                             <strong>Deaths: </strong>{deaths}</p>
                         <p className="card-text mb-0"><strong>Games
                             Played: </strong>{gamesPlayed}</p>
-                        <p className="card-text"><strong>Win
+                        <p className="card-text mb-0"><strong>Win
                             Percentage: </strong>{winPercentage}%
+                        </p>
+                        <p className="card-text mb-0"><strong>Revives: </strong>{revives}
+                        </p>
+                        <p className="card-text mb-0"><strong>Top 5: </strong>{top5}
+                        </p>
+                        <p className="card-text mb-0"><strong>Top 10: </strong>{top10}
+                        </p>
+                        <p className="card-text mb-0"><strong>Top 25: </strong>{top25}
+                        </p>
+                        <p className="card-text"><strong>Time Played: </strong>{secondsToTime(timePlayed)}
                         </p>
                     </div>
                 </div>
@@ -129,7 +150,7 @@ class App extends Component {
                 <>
                     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                         <div className="container-fluid">
-                            <a className="navbar-brand" href="#"><img src={logo} alt="ATN3" width="50"/> ATN3's Warzone
+                            <a className="navbar-brand" href="#">ATN3's Warzone
                                 Stats</a>
                         </div>
                     </nav>
@@ -156,7 +177,7 @@ class App extends Component {
 
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="#"><img src={logo} alt="ATN3" width="50"/> ATN3's Warzone
+                        <a className="navbar-brand" href="#">ATN3's Warzone
                             Stats</a>
                     </div>
                 </nav>
@@ -204,6 +225,11 @@ class App extends Component {
                                         deaths={`${user.response2.br.deaths}`}
                                         gamesPlayed={`${user.response2.br.gamesPlayed}`}
                                         winPercentage={`${(user.response2.br.wins / user.response2.br.gamesPlayed * 100).toFixed(2)}`}
+                                        revives={`${user.response2.br.revives}`}
+                                        top5={`${user.response2.br.topFive}`}
+                                        top10={`${user.response2.br.topTen}`}
+                                        top25={`${user.response2.br.topTwentyFive}`}
+                                        timePlayed={`${user.response2.br.timePlayed}`}
                                     />
                                 ))}
                             </div>
